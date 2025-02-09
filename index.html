@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Tensão e Força</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💡 Calculadora de Tensão e Força</h1>
+    
+    <div class="input-section">
+      <h3>Dados do Problema</h3>
+      
+      <div class="input-group">
+        <label for="force">Peso da Luminária (N):</label>
+        <input type="number" id="force" placeholder="Ex.: 250">
+      </div>
+      
+      <!-- Seção para informar os ângulos -->
+      <div class="input-group">
+        <label for="angleAC">Ângulo AC (graus):</label>
+        <input type="number" id="angleAC" placeholder="Ex.: 56.466">
+      </div>
+      <div class="input-group">
+        <label for="angleAD">Ângulo AD (graus):</label>
+        <input type="number" id="angleAD" placeholder="Ex.: 45">
+      </div>
+      <div class="input-group">
+        <label for="angleOrientation">Como os ângulos são medidos?</label>
+        <select id="angleOrientation">
+          <option value="horizontal">Medidos a partir da horizontal</option>
+          <option value="vertical">Medidos a partir da vertical</option>
+        </select>
+      </div>
+      
+      <div class="input-group">
+        <label for="diameterAB">Diâmetro AB (mm):</label>
+        <input type="number" id="diameterAB" placeholder="Ex.: 9">
+      </div>
+      <div class="input-group">
+        <label for="diameterAC">Diâmetro AC (mm):</label>
+        <input type="number" id="diameterAC" placeholder="Ex.: 6">
+      </div>
+      <div class="input-group">
+        <label for="diameterAD">Diâmetro AD (mm):</label>
+        <input type="number" id="diameterAD" placeholder="Ex.: 7.5">
+      </div>
+    </div>
+
+    <button onclick="solveProblem()">Calcular Solução</button>
+
+    <div class="results">
+      <h3>Resultados Obtidos:</h3>
+      <div class="result-item">
+        <h4>Tensões Normais Médias:</h4>
+        <p>Tensão AC (σ<sub>AC</sub>): <span id="stressAC">0</span> MPa</p>
+        <p>Tensão AD (σ<sub>AD</sub>): <span id="stressAD">0</span> MPa</p>
+        <p>Tensão AB (σ<sub>AB</sub>): <span id="stressAB">0</span> MPa</p>
+      </div>
+      
+      <div class="result-item">
+        <h4>Forças nas Hastes:</h4>
+        <p>Força AC (F<sub>AC</sub>): <span id="forceAC">0</span> N</p>
+        <p>Força AD (F<sub>AD</sub>): <span id="forceAD">0</span> N</p>
+        <p>Força AB (F<sub>AB</sub>): <span id="forceAB">0</span> N</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
